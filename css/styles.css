@@ -282,6 +282,14 @@ footer{
     color: rgb(33, 37, 41);
   }
 
+  footer h2{
+    font-family: 'Roboto', sans-serif;
+  }
+
+  footer h3{
+    font-family: 'Roboto', sans-serif;
+  }
+
   #social-contact p{
     font-family: 'Open Sans', sans-serif;
     color: rgb(33, 37, 41);
