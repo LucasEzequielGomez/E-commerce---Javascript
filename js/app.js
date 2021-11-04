@@ -19,7 +19,6 @@ function recuperarStock() {
 
 localStorage.setItem('stock', JSON.stringify(productosIniciales))
 recuperarStock()
-mostrarProductos(stockProductos)
 
 class Productos{
     constructor(id,title,price,thumbnail,desc,cantidad){
