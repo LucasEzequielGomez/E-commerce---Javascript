@@ -17,39 +17,35 @@ function recuperarStock() {
     }
 }
 
-$.getJSON('stock.json', function (data) {
-    console.log(data)
-    localStorage.setItem('stock', JSON.stringify(data))
-    recuperarStock()
-    mostrarProductos(data)
-    recuperar()
-})
+localStorage.setItem('stock', JSON.stringify(productosIniciales))
+recuperarStock()
+mostrarProductos(stockProductos)
 
 class Productos{
-    constructor(id,title,price,thumbnail,desc, cantidad){
+    constructor(id,title,price,thumbnail,desc,cantidad){
         this.id= id;
         this.nombre= title;
         this.precio= price;
         this.img= thumbnail;
-        this.desc= desc;
-        this.cantidad = cantidad
+        this.cantidad = cantidad;
     }
 }
 
-$.get('https://api.mercadolibre.com/sites/MLA/search?category=MLA1500&limit=30', function (data) {
-    console.log(data)
+$.get('https://api.mercadolibre.com/sites/MLA/search?category=MLA1500', function (data) {
     data.results.forEach(el=> stockProductos.push(
-        new Productos(el.id,el.title,el.price,el.thumbnail,'sos el mejor',1)
+        new Productos(el.id,el.title,el.price,el.thumbnail,1)
     ))
-
     mostrarProductos(stockProductos)
 })
 
 async function setData() {
-    const result = await fetch('stock.json')
-    const data = await result.json()
-    console.log(result);
-    console.log(data);
+    // var result = {};
+    // $.getJSON( "../stock.json", function( data ) {
+    //     result = data;
+    //   });
+    // // const data = await result.json()
+    // console.log(result);
+    // console.log(data);
   }
 
 setData();
@@ -58,51 +54,43 @@ carritoDeCompras.forEach(function(producto){
     actualizarCarrito(producto, true)
 })
 
-/*
-selecTipos.addEventListener('change',()=>{
-    console.log(selecTalles.value)
-    if(selecTipos.value == 'all'){
-        mostrarProductos(stockProductos)
-    }else{
-        mostrarProductos(stockProductos.filter(el => el.tipo == selecTipos.value))
-    }b
-})
-*/
 $('#selecTipos').on('change',()=>{
-    if($('selecTipos').val() == 'all'){
+    $('#contenedor-productos').empty()
+    if($('#selecTipos').val() == 'all'){
         mostrarProductos(stockProductos)
     }else{
         mostrarProductos(stockProductos.filter(el => el.tipo == $('#selecTipos').val()))
     }
 })
 
-mostrarProductos(stockProductos)
 function mostrarProductos(array){
-    $('#contenedor-productos').empty()
+ //   $('#contenedor-productos').empty()
      for (const producto of array) {
          $('#contenedor-productos').append(`<div class="producto">
                                              <div class="card">
                                              <div class="card-image">
-                                                 <img src="https://thumbs.gfycat.com/DearWellinformedDalmatian-size_restricted.gif" class="loader">
                                                  <img src=${producto.img} class="img-productos">
                                                  <span class="card-title">${producto.nombre}</span>
                                                  <a id="boton${producto.id}" class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add_shopping_cart</i></a>
                                              </div>
                                              <div class="card-content">
-                                                 <p>${producto.desc}</p>
-                                                 <p>Talle: ${producto.talle}</p>
                                                  <p> $${producto.precio}</p>
                                              </div>
-                                         </div> 
+                                         </div>
                                      </div> `)
 
          $(`#boton${producto.id}`).click(()=>{
                  agregarAlCarrito(producto.id)
+                 Toastify({
+                    text: "🤙 Agregado al Carrito",
+                    className: "info",
+                    style: {
+                      background: "linear-gradient(to right, #00b09b, #96c93d)",
+                    }
+                  }).showToast();
         })
      }
  }
-
-
 function agregarAlCarrito(id) {
 
     let repetido = carritoDeCompras.find(prodR => prodR.id == id);
@@ -122,6 +110,9 @@ function agregarAlCarrito(id) {
     }
     
     localStorage.setItem("carritoDeCompras", JSON.stringify(carritoDeCompras));
+
+    
+    actualizarCarrito()
 }
 
 
@@ -132,8 +123,8 @@ function actualizarCarrito(productoAgregar, primeraVez) {
    if (primeraVez) {
     let div = document.createElement('div')
     div.classList.add('productoEnCarrito')
-    div.innerHTML = `<p>${productoAgregar.nombre}</p>
-                    <p>Precio: ${productoAgregar.precio}</p>
+    div.innerHTML = `<p id="listadoProducto">${productoAgregar.nombre}</p>
+                    <p>Precio: $${productoAgregar.precio}</p>
                     <p id="cantidad${productoAgregar.id}">cantidad: ${productoAgregar.cantidad}</p>
                     <button id="eliminar${productoAgregar.id}" class="boton-eliminar"><i class="fas fa-trash-alt"></i></button>`
     contenedorCarrito.appendChild(div)
@@ -143,7 +134,18 @@ function actualizarCarrito(productoAgregar, primeraVez) {
     botonEliminar.addEventListener('click', ()=>{
         botonEliminar.parentElement.remove()
         carritoDeCompras = carritoDeCompras.filter(prodE => prodE.id != productoAgregar.id)
+
+        localStorage.setItem('carritoDeCompras',JSON.stringify(carritoDeCompras))
+
         actualizarCarrito()
+
+        Toastify({
+            text: "👎 Eliminado del Carrito",
+            className: "info",
+            style: {
+              background: "linear-gradient(to right, #FA766A, #FA1313)",
+            }
+          }).showToast();
     })
-   }
+  }
 }

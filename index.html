@@ -4,42 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entrega Javascript</title>
+
+    <title>El corralón 🔨🧱</title>
+
     <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="css/styles.css">
     
 </head>
 <body>
 
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-		<a class="navbar-brand" href="#">CORRALON</a>
+		<a class="navbar-brand" href="#">EL CORRALON DE BELLA VISTA 🔨🧱</a>
         <button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span id="contadorCarrito">0</span></button>
-	</nav>
-    
-    <select id="selecTipos">
-        <option value="all">Todos</option>
-        <option value="L">Large</option>
-        <option value="M">Medium</option>
-        <option value="S">Small</option>
-    </select>
-   
+	</nav> 
+
+    <img name="slider" class="slider">
+
+    <div class="select">
+        <h2>Nuestros productos</h2>
+        <select class="col-md-2 d-none d-md-block bg-light sidebar" id="selecTipos">
+            <option class="nav-link active" value="all">Todos</option>
+            <option class="nav-link active" value="aceros">Aceros</option>
+            <option class="nav-link active" value="mamposteria">Mampuestos</option>
+            <option class="nav-link active" value="aditivos">Aditivos</option>
+            <option class="nav-link active" value="herramientas">Herramientas</option>
+        </select>
+    </div>
+
     <main id="contenedor-productos">
-       
+         <!--aca van a ir los productos-->
     </main>
-    
-    <select id="selecTipos">
-        <option value="all">Todos</option>
-        <option value="aceros">Aceros</option>
-        <option value="mamposteria">Mampuestos</option>
-        <option value="aditivos">Aditivos</option>
-        <option value="herramientas">Herramientas</option>
-    </select>
 
     <div class="modal-contenedor">
         <div class="modal-carrito">
@@ -56,41 +56,43 @@
         </div>
     </div>
 
-    <div class="row">
-        <form class="col s12" id="formulario">
-            <div class="row">
-                <div class="input-field col s6">
-                    <input placeholder="Nombre" id="name" type="text" class="validate">
+    <footer>
+        <div id="logo">
+            <h2>El corralón 🔨🧱</h2>
+        </div>
+        <div class="row">
+            <form class="col s12" id="formulario">    
+                <div class="row">
+                    <h3>SUSCRIBITE A NUESTRO NEWSLETTER</h3>
+                    <div class="input-field col s12">
+                        <input id="email" type="email" class="validate" placeholder="Email">
+                    </div>
                 </div>
-                <div class="input-field col s6">
-                    <input id="last_name" type="text" class="validate" placeholder="Apellido">
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input  id="direccion" type="text" class="validate" placeholder="Direccion">
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="city" type="text" class="validate" placeholder="Localidad">
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="email" type="email" class="validate" placeholder="Email">
-                </div>
-            </div>
-            <input class="submit" type="submit" id="submit" value="Enviar">
-        </form>
-    </div>
+                <input class="submit" type="submit" id="submit" value="Enviar">
+            </form>
+        </div>
+        <div>
+            <ul id="social-contact">
+                <p>+54 1130929827</p>
+                <p>Bella Vista, Buenos Aires, Argentina</p>
+                <p>lucasgomezmmo@gmail.com</p>
+                <a href="https://www.instagram.com/negropiola_/" target="_blank"><img src="https://i.ibb.co/rw4nNJP/logotipo-de-instagram.png" alt="logo de instagram"></a>
+                <a href="https://www.linkedin.com/in/lucas-ezequiel-gomez/" target="_blank"><img src="https://i.ibb.co/XLg9Cpv/linkedin.png" alt="logo de linkedin"></a>
+                <a href="https://t.me/LucasEGomez" target="_blank"><img src="https://i.ibb.co/5ccBJRs/telegrama.png" alt="logo de telegram"></a>
+                <a href="https://api.whatsapp.com/send?phone=5491130929827" target="_blank"><img src="https://i.ibb.co/f9jPf7r/whatsapp.png" alt="logo de whatsapp"></a>
+            </ul>
+        </div>
+    </footer>
+    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js" integrity="sha512-n/4gHW3atM3QqRcbCn6ewmpxcLAHGaDjpEBu4xZd47N0W2oQ+6q7oc3PXstrJYXcbNU1OHdQ1T7pAP+gi5Yu8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     
-    <!-- <script src="stock.js"></script> -->
+    
+    <script src="js/stock.js"></script>
     <script src="js/modal.js"></script>
+    <script src="js/slider.js"></script>
     <script src="js/formulario.js"></script>
     <script src="js/app.js"></script>
     

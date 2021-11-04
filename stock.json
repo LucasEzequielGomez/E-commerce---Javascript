@@ -31,7 +31,7 @@
   },
   {
     "id": 4,
-    "nombre": "barra Ø14",
+    "nombre": "barra Ø12",
     "tipo": "aceros",
     "desc": "bara de acero acindar",
     "precio": 950,
@@ -41,6 +41,16 @@
   },
   {
     "id": 5,
+    "nombre": "barra Ø16",
+    "tipo": "aceros",
+    "desc": "bara de acero acindar",
+    "precio": 950,
+    "talle": "aceros",
+    "img": "img/barrasDeAcero.webp",
+    "cantidad": 1
+  },
+  {
+    "id": 6,
     "nombre": "ladrillo comun",
     "tipo": "mamposteria",
     "desc": "ladrillo hueco",
@@ -50,7 +60,7 @@
     "cantidad": 1
   },
   {
-    "id": 6,
+    "id": 7,
     "nombre": "ladrillo hueco 8",
     "tipo": "mamposteria",
     "desc": "ladrillo hueco",
@@ -60,7 +70,7 @@
     "cantidad": 1
   },
   {
-    "id": 7,
+    "id": 8,
     "nombre": "ladrillo hueco 12",
     "tipo": "mamposteria",
     "desc": "ladrillo hueco",
@@ -70,7 +80,7 @@
     "cantidad": 1
   },
   {
-    "id": 8,
+    "id": 9,
     "nombre": "ladrillo hueco 18",
     "tipo": "mamposteria",
     "desc": "ladrillo hueco",
@@ -80,7 +90,17 @@
     "cantidad": 1
   },
   {
-    "id": 9,
+    "id": 10,
+    "nombre": "ladrillo Retak 12",
+    "tipo": "mamposteria",
+    "desc": "ladrillo HCAC",
+    "precio": 800,
+    "talle": "mamposteria",
+    "img": "img/ladrilloRetak12.webp",
+    "cantidad": 1
+  },
+  {
+    "id": 11,
     "nombre": "bolsa de 50kg",
     "tipo": "aditivos",
     "desc": "bolsa de cemento",
@@ -90,7 +110,7 @@
     "cantidad": 1
   },
   {
-    "id": 10,
+    "id": 12,
     "nombre": "bolsa de 20kg",
     "tipo": "aditivos",
     "desc": "bolsa de cal",
@@ -100,7 +120,7 @@
     "cantidad": 1
   },
   {
-    "id": 11,
+    "id": 13,
     "nombre": "arena x m³",
     "tipo": "aditivos",
     "desc": "bolson de arena",
@@ -110,7 +130,7 @@
     "cantidad": 1
   },
   {
-    "id": 12,
+    "id": 14,
     "nombre": "cerecita de 20L",
     "tipo": "aditivos",
     "desc": "balde de cerecita",
@@ -120,7 +140,7 @@
     "cantidad": 1
   },
   {
-    "id": 13,
+    "id": 15,
     "nombre": "carretilla",
     "tipo": "herramientas",
     "desc": "carretilla de transporte",

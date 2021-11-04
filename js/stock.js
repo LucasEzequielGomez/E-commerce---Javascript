@@ -1,4 +1,4 @@
-let stockProductos = [
+let productosIniciales = [
     {id: 1, nombre: "barra Ø6", tipo: "aceros", desc: "bara de acero acindar", precio: 800, talle: "aceros", img: 'img/barrasDeAcero.webp', cantidad:1},
     {id: 2, nombre: "barra Ø8", tipo: "aceros", desc: "bara de acero acindar", precio: 850, talle: "aceros", img: 'img/barrasDeAcero.webp', cantidad:1},
     {id: 3, nombre: "barra Ø10", tipo: "aceros", desc: "bara de acero acindar", precio: 900, talle: "aceros", img: 'img/barrasDeAcero.webp', cantidad:1},
